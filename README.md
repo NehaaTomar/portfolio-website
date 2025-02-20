@@ -9,8 +9,6 @@ Check out my portfolio: [Live Demo](https://NehaaTomar.github.io/portfolio-websi
 - 🌐 **Responsive Design:** Optimized for all devices.
 - 🌙 **Dark Mode Toggle:** Switch between light and dark themes.
 - 🚀 **Projects Showcase:** Highlights key projects with tech stack details.
-- 🏆 **Achievements Section:** Displays coding profiles and competition rankings.
-- ✍️ **Blog Section:** Insights into programming and problem-solving.
 - 📄 **Resume Download:** Easy access to my resume.
 - 📩 **Contact Section:** Links to LinkedIn, GitHub, and email.
 
