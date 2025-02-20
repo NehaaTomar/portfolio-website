@@ -4,34 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neha Tomar - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #1a1a1a;
+            background: linear-gradient(to right, #1a1a1a, #333);
             color: white;
-            text-align: center;
             transition: background 0.3s ease, color 0.3s ease;
-        }
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
         }
         .sidebar {
             position: fixed;
             left: 0;
             top: 0;
-            width: 9%;
-            height: 100%;
+            width: 10%; /* Sidebar width */
+            height: 100vh; /* Full height */
+            overflow-y: auto; /* Allow scrolling if content exceeds height */
             background: #222;
             padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
             transition: all 0.3s;
         }
         .sidebar:hover {
@@ -41,19 +37,19 @@
             background: none;
             border: none;
             color: white;
-            font-size: 1rem;
+            font-size: 1.1rem;
             margin: 12px 0;
             cursor: pointer;
-            padding: 8px 15px;
+            padding: 10px 15px;
             border-radius: 5px;
-            transition: background 0.3s;
+            transition: background 0.3s, transform 0.3s;
+            width: 100%;
+            text-align: left;
         }
         .sidebar button:hover, .sidebar button.active {
             background: #4DB8FF;
             color: black;
-        }
-        .sidebar button:focus {
-            outline: 2px solid #4DB8FF;
+            transform: scale(1.05);
         }
         .toggle {
             margin-top: auto;
@@ -61,54 +57,45 @@
             font-size: 1.8rem;
         }
         .content {
-            margin-left: 15%;
-            width: 85%;
+            margin-left: 15%; /* Set margin equal to sidebar width */
             padding: 20px;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            text-align: justify;
-        }
-        .buttons a, .resume-button, .project-button {
-            display: inline-block;
-            margin: 10px;
-            padding: 10px 20px;
-            background-color: #4DB8FF;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-        .buttons a:hover, .resume-button:hover, .project-button:hover {
-            background-color: #3a9bd8;
+            align-items: flex-start; /* Align content to the left */
+            justify-content: flex-start; /* Align content to the top */
+            min-height: 100vh; /* Ensure content takes full height */
+            text-align: left; /* Align text to the left */
+            transition: background 0.3s ease; /* Smooth transition for background */
         }
         h1, h2 {
             color: #4DB8FF;
         }
-        .animated {
-            animation: fadeIn 2s ease-in-out;
+        .section {
+            display: none;
+            width: 100%;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .section.active {
+            display: block;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+            width: 80%; /* Ensure cards take full width */
+        }
+        .card:hover {
+            transform: translateY(-5px);
         }
         .skills-list {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
+            justify-content: flex-start; /* Align skills to the left */
             gap: 15px;
             font-size: 1rem;
-            text-align: justify;
-        }
-        .typing {
-            display: inline-block;
-            overflow: hidden;
-            white-space: nowrap;
-            border-right: 2px solid white;
-            animation: typing 2s steps(40, end) forwards, blink 0.7s infinite;
-            animation: typing 3s steps(40, end) forwards, blink 0.7s infinite;
+            text-align: left; /* Align text to the left */
         }
         .skills-list li {
             list-style: none;
@@ -120,36 +107,76 @@
         }
         .skills-list li:hover {
             transform: scale(1.1);
+        }
+        .resume-button, .project-button {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #4DB8FF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .resume-button:hover, .project-button:hover {
+            background-color: #3a9bd8;
+            transform: scale(1.05);
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+        .social-icons {
+            margin-top: 10px;
+        }
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        .social-icons a:hover {
+            color: #4DB8FF;
+        }
+        .light-theme {
+            background-color: white; /* Change background to white */
+            color: black;
+        }
+        .light-theme .sidebar {
+            background: #f4f4f4;
+        }
+        .light-theme .sidebar button {
+            color: black;
+        }
+        .light-theme .sidebar button:hover,
+        .light-theme .sidebar button.active {
+            background: #007BFF;
+            color: white;
+        }
+        .light-theme h1,
+        .light-theme h2 {
+            color: #007BFF;
+        }
+        .light-theme .skills-list li {
+            background: rgba(0, 0, 0, 0.1);
+        }
+        .certificate-button {
+            display: inline-block;
+            margin: 10px 0;
+            padding: 10px 20px;
+            background-color: #4DB8FF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background-color 0.3s, transform 0.3s;
+        }
 
-            .light-theme {
-    background-color: white;
-    color: black;
-}
-
-.light-theme .sidebar {
-    background: #f4f4f4;
-}
-
-.light-theme .sidebar button {
-    color: black;
-}
-
-.light-theme .sidebar button:hover,
-.light-theme .sidebar button.active {
-    background: #007BFF;
-    color: white;
-}
-
-.light-theme h1,
-.light-theme h2 {
-    color: #007BFF;
-}
-
-.light-theme .skills-list li {
-    background: rgba(0, 0, 0, 0.1);
-}
-
-
+        .certificate-button:hover {
+            background-color: #3a9bd8;
+            transform: scale(1.05);
         }
     </style>
     <script>
@@ -158,28 +185,35 @@
             let themeIcon = document.querySelector(".toggle");
             if (document.body.classList.contains("light-theme")) {
                 themeIcon.textContent = "🌙"; // Moon icon for dark mode
+                document.body.style.backgroundColor = "white"; // Change background to white
             } else {
                 themeIcon.textContent = "☀️"; // Sun icon for light mode
+                document.body.style.backgroundColor = ""; // Reset background
             }
         }
 
         function showSection(sectionId) {
             let sections = document.querySelectorAll(".section");
-            sections.forEach(section => section.style.display = "none");
+            sections.forEach(section => section.classList.remove("active"));
 
             let selectedSection = document.getElementById(sectionId);
             if (selectedSection) {
-                selectedSection.style.display = "block";
+                selectedSection.classList.add("active");
                 if (sectionId === 'about') {
                     animateText();
                 }
             } else {
                 console.error(`Section with ID '${sectionId}' not found.`);
             }
+
+            // Remove active class from all buttons
             document.querySelectorAll(".sidebar button").forEach(button => button.classList.remove("active"));
+
+            // Add active class to the clicked button
             let activeButton = document.querySelector(`.sidebar button[onclick="showSection('${sectionId}')"]`);
             if (activeButton) activeButton.classList.add("active");
         }
+
         function animateText() {
             const text = "Welcome to my portfolio! I am passionate about software development, problem-solving, and technology.";
             const aboutText = document.getElementById("about-text");
@@ -194,9 +228,6 @@
             }
             type();
         }
-        function toggleTheme() {
-            document.body.classList.toggle("dark-theme");
-        }
     </script>
 </head>
 <body>
@@ -204,94 +235,146 @@
         <button onclick="showSection('about')">About</button>
         <button onclick="showSection('skills')">Skills</button>
         <button onclick="showSection('projects')">Projects</button>
+        <button onclick="showSection('experience')">Experience</button>
         <button onclick="showSection('resume')">Resume</button>
         <button onclick="showSection('contact')">Contact</button>
         <div class="toggle" onclick="toggleTheme()">☀️</div>
     </div>
     <div class="content">
-        <div id="about" class="section animated">
-
+        <div id="about" class="section active">
             <h1>Neha Tomar</h1>
             <p><strong>Software Developer | Web Enthusiast | Problem Solver</strong></p>
             <h2>About Me</h2>
-
             <p>I am a passionate software developer with expertise in web development, data structures, and problem-solving.</p>
             <p>With a keen interest in UI/UX design and efficient coding practices, I strive to create interactive and user-friendly applications.</p>
-            <p>
-            Passionate and detail-oriented Computer Science student with a strong foundation in DBMS, OS, COA, and DSA.
-            <p>Enthusiastic about problem-solving, web development, and software engineering.</p>
-            <p> Currently exploring Data Structures & Algorithms to improve coding skills.
-            </p> Aspiring to work in software development with a focus on backend and system design.</p>
+            <p>Passionate and detail-oriented Computer Science student with a strong foundation in DBMS, OS, COA, and DSA. Enthusiastic about problem-solving, web development, and software engineering. Currently exploring Data Structures & Algorithms to improve coding skills. Aspiring to work in software development with a focus on backend and system design.</p>
             <h2>Education</h2>
             <div>
-            <p><strong>Bachelor's Degree in Computer Science</strong></p>
-            <p>Galgotias College of Engineering and Technology</p>
-            <p>Graduating in 2025</p>
+                <p><strong>Bachelor's Degree in Computer Science</strong></p>
+                <p>Galgotias College of Engineering and Technology</p>
+                <p>Graduating in 2025</p>
             </div>
         </div>
-        <div id="skills" class="section animated" style="display:none;">
+        <div id="skills" class="section">
             <h2>Skills</h2>
             <ul class="skills-list">
-                <li>JavaScript</li>
+                <div>
+                    <h4>• Programming Languages </h4>
+                    <li>C Language</li>
+                    <li>Python</li>
+                    <li>C++ Language</li>
+                    <h4>• Front-end Technologies </h4>
+                    <li>JavaScript</li>
                 <li>HTML & CSS</li>
-                <li>C Language</li>
-                <li>Python</li>
-                <li>Data Structures & Algorithms (DSA)</li>
-                <li>Computer Networks</li>
-                <li>Operating Systems</li>
-                <li>Database Management System (DBMS)</li>
-                <li>SQL</li>
+                    <h4>•  Developer Tools  </h4>
+                    <li>Git</li>
+                <li>GitHub</li>
+                <li> Visual Studio Code</li>
+                <li>PyCharm</li>
+                <li>IntelliJ</li>
+                    <h4>• Database</h4>
+                    <li>MySQL</li>
+                    <h4>•Core Subjects </h4>
+                    <li>DBMS</li>
+                     <li>Operating System</li>
+                     <li>Computer Network </li>
+                    <li>Computer Organization and Architecture</li>
+                    <h4>• Cloud Platforms </h4>
+                    <li>Google Cloud Platform (GCP)</li>
+                </div>
             </ul>
         </div>
-        <div id="projects" class="section animated" style="display:none;">
-            <div><h2>Projects</h2>
-            <h3>Sudoku solver</h3>
-
+        <div id="projects" class="section">
+            <h2>Projects</h2>
+            <div class="card">
+                <h3>Sudoku Solver</h3>
                 <a href="https://github.com/NehaaTomar/Sudoku_solver" class="project-button">Sudoku Solver</a>
-                <p>A Sudoku solver using C++ efficiently finds solutions to any valid Sudoku puzzle by filling the grid while maintaining the puzzle constraints.</p>
-                <li> An interactive web-based Sudoku solver using backtracking algorithms.</li>
-               <li>Sudoku Solver using Backtracking (C++), optimized it with constraint propagation, and deployed it on GCP with a Flask API, reducing solve time by 40%</li>
-                <li> Handles partially filled grids as input</li>
-                <li>Provides a clear visual outputof the solved puzzle</li>
-
-        </div>
-
-
-        <div>
-            <h3>Portfolio Website</h3>
-            <a href="https://github.com/NehaaTomar/portfolio-website" class="project-button">Portfolio Website</a>
-                <p>A responsive portfolio website designed to showcase my skills, projects, and experience. </p>
-
                 <ul>
-                    <li>Built with HTML, CSS, and JavaScript</li>
-                    <li> Features dark mode toggle for enhanced readability</li>
-                    <li> Highlights projects, skills, and contact details</li>
-                    <li> Fully responsive design for all devices</li>
+                    <li>A Sudoku solver using C++ efficiently finds solutions to any valid Sudoku puzzle by filling the grid while maintaining the puzzle constraints.</li>
+                    <li>An interactive web-based Sudoku solver using backtracking algorithms.</li>
+                    <li>Sudoku Solver using Backtracking (C++), optimized it with constraint propagation, and deployed it on GCP with a Flask API, reducing solve time by 40%.</li>
+                    <li>Handles partially filled grids as input.</li>
+                    <li>Provides a clear visual output of the solved puzzle.</li>
                 </ul>
-            </li>
+            </div>
+            <div class="card">
+                <h3>Portfolio Website</h3>
+                <a href="https://github.com/NehaaTomar/portfolio-website" class="project-button">Portfolio Website</a>
+<ul>
+                <li>A responsive portfolio website designed to showcase my skills, projects, and experience.</li>
+                    <li>Built with HTML, CSS, and JavaScript.</li>
+                    <li>Features dark mode toggle for enhanced readability.</li>
+                    <li>Highlights projects, skills, and contact details.</li>
+                    <li>Fully responsive design for all devices.</li>
+                </ul>
+            </div>
         </div>
-
+       <!-- ======== Experience Section (Add closing </div> here) ======== -->
+       <div id="experience" class="section">
+        <h2>Experience & Certifications</h2>
+        <!-- Work Experience -->
+        <div class="card">
+            <h3>Software Development Intern</h3>
+            <p><strong>Let’s Grow More | May 2024</strong></p>
+            <ul>
+                <li>Developed and optimized front-end components using HTML, CSS, and JavaScript.</li>
+                <li>Completed three structured tasks, improving UI design and problem-solving capabilities.</li>
+                <li>Built dynamic and responsive web applications, enhancing user experience.</li>
             </ul>
-        </div>
-        <div id="resume" class="section animated" style="display:none;">
-            <h2>Resume</h2>
-        <p>Download my resume to learn more about my experience and qualifications.</p>
-        <li>A detailed resume highlighting my technical skills, education,projects, and work experience.</li>
-        <li>It showcases my expertise in software development
-        problem-solving, and web technologies.</li>
-        <li>Includes technical skills (DBMS, OS, COA, DSA, Web Development)</li>
-        <li>Lists projects and internship experience</li>
-        <li>Features contact details for professional networking</li>
-        <li>Available in PDF format for easy download</li>
-        <a href="https://drive.google.com/file/d/1nvSQ9v7M57aDc-uw5SYJcbwoV5PiFCsr/view?usp=drive_link" class="resume-button">Download Resume</a>
-
-        </div>
-        <div id="contact" class="section animated" style="display:none;">
-            <h2>Contact</h2>
-            <p>Email: nehatomar349@gmail.com</p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/neha-tomar-52b212224">LinkedIn</a></p>
-            <p>GitHub: <a href="https://github.com/NehaaTomar">GitHub</a></p>
+            <!-- Certificates -->
+        <div class="card">
+            <h3>Internship Certificate</h3>
+            <p><strong>Let's Grow More | Issued 2 June 2024</strong></p>
+            <a href="https://drive.google.com/file/d/1jG6DFPTsETF82o9y5ou4ytBIsUUmuZb5/view?usp=drive_link"
+               class="certificate-button"
+               target="_blank">
+                View Certificate
+            </a>
         </div>
     </div>
-</body>
-</html>
+    <div class="card">
+            <h3>Campus Ambassador</h3>
+            <p><strong>Verzeo | Aug 2022 - Oct 2022</strong></p>
+            <ul>
+                <li>Increased student engagement and participation through targeted outreach initiatives, boosting event attendance by 30%.</li>
+                <li>Managed and curated social media content across multiple platforms, resulting in a 20% increase in online visibility.</li>
+            </ul>
+        <div class="card">
+            <h3>Internship Certificate</h3>
+            <p><strong>Verzeo | Issued 8 Dec 2022</strong></p>
+            <a href="https://drive.google.com/file/d/1yzfgkeBozbVZs4fwW-ZlR7GiR0VKWolX/view?usp=drive_link"
+               class="certificate-button"
+               target="_blank">
+                View Certificate
+            </a>
+        </div>
+        </div>
+    </div> <!-- Closing tag for experience section -->
+    <!-- ======== Resume Section ======== -->
+    <div id="resume" class="section">
+<h2>Resume</h2>
+<div class="card">
+            <a href="https://drive.google.com/file/d/1jY_RK7LHwgNWQTnprlEAqiOroNitJszj/view?usp=drive_link"
+           class="resume-button"
+           target="_blank">
+            Download Resume
+        </a><p>Download my resume to learn more about my experience and qualifications.</p>
+            <li>A detailed resume highlighting my technical skills, education, projects, and work experience.</li>
+            <li>It showcases my expertise in software development, problem-solving, and web technologies.</li>
+            <li>Includes technical skills (DBMS, OS, COA, DSA, Web Development).</li>
+            <li>Lists projects and internship experience.</li>
+            <li>Features contact details for professional networking.</li>
+            <li>Available in PDF format for easy download.</li>
+        </div>
+    </div>
+    <!-- ======== Contact Section ======== -->
+    <div id="contact" class="section">
+        <h2>Contact</h2>
+        <ul>
+        <div class="social-icons">
+        <p>Email: <a href="mailto:nehatomar349@gmail.com"><i class="fas fa-envelope"></i></a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/neha-tomar-52b212224" target="_blank"><i class="fab fa-linkedin"></i></a></p>
+        <p>GitHub: <a href="https://github.com/NehaaTomar" target="_blank"><i class="fab fa-github"></i></a></p>
+        </ul>
+        </div>
+    </div>
