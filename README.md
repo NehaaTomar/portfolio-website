@@ -82,6 +82,31 @@ Design goals:
 * 🌐 Fast and accessible
 
 ---
+---
+## 📸 Screenshots
+
+### Homepage
+
+![Homepage](/image/Portfolio.png)
+### Project
+
+![Project](/image/project.png)
+### Skills
+
+![skills](/image/skills.png)
+
+### Education
+
+![Education](/image/education.png)
+
+### Experience
+
+![Experience ](/image/experience.png)
+
+### Contact
+
+![Contact](/image/contact.png)
+---
 
 ## 🚀 How to Use
 
