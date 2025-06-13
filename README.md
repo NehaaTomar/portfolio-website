@@ -1,6 +1,4 @@
 ---
-
-````markdown
 # 🌐 Neha Tomar's Portfolio Website
 
 Welcome to my personal portfolio website! This project is a responsive, multi-page web application that showcases my skills, projects, experience, and achievements as a software developer.
