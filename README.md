@@ -1,51 +1,128 @@
-# Neha Tomar | Portfolio Website
+---
 
-Welcome to my personal portfolio website! This site showcases my projects, skills, achievements, and blog posts related to software development.
+````markdown
+# 🌐 Neha Tomar's Portfolio Website
 
-## 🔗 Live Demo
-Check out my portfolio: [Live Demo](https://NehaaTomar.github.io/portfolio-website/)
+Welcome to my personal portfolio website! This project is a responsive, multi-page web application that showcases my skills, projects, experience, and achievements as a software developer.
 
-## 📌 Features
-- 🌐 **Responsive Design:** Optimized for all devices.
-- 🌙 **Dark Mode Toggle:** Switch between light and dark themes.
-- 🚀 **Projects Showcase:** Highlights key projects with tech stack details.
-- 📄 **Resume Download:** Easy access to my resume.
-- 📩 **Contact Section:** Links to LinkedIn, GitHub, and email.
+## 📌 Live Preview
 
-## 🛠 Tech Stack
-- **Frontend:** HTML, CSS, JavaScript
-- **Hosting:** GitHub Pages
-
-## 🚀 Installation & Setup
-To run the portfolio locally:
-
-1. **Clone the repository:**
-   ```sh
-   git clone https://github.com/NehaaTomar/portfolio-website.git
-   ```
-2. **Navigate to the project directory:**
-   ```sh
-   cd portfolio-website
-   ```
-3. **Open the project in a browser:**
-   - Simply open index.html in your browser to view the portfolio.
-
-## 📄 Deployment
-The portfolio is deployed using **GitHub Pages**:
-
-1. Push your changes to GitHub.
-2. Go to **Settings** → **Pages**.
-3. Under **Branch**, select `main` and save.
-4. Once deployed, your portfolio will be live at:
-
-   ```
-   https://NehaaTomar.github.io/portfolio-website/
-   ```
-
-## 📬 Contact Me
-- 📧 **Email:** [nehatomar349@gmail.com](mailto:nehatomar349@gmail.com)
-- 🔗 **LinkedIn:** [neha-tomar](https://www.linkedin.com/in/neha-tomar-52b212224/)
-- 💻 **GitHub:** [NehaaTomar](https://github.com/NehaaTomar)
+🌟 [View the Live Website](https://your-portfolio-link.com)  
+📹 [Watch the Video Demo]([https://www.youtube.com/watch?v=YOUR_VIDEO_ID](https://youtu.be/Xy_mYpW_6JA))
 
 ---
-**💡 Contributions & Feedback:** If you have suggestions or find any issues, feel free to create a pull request or open an issue!
+
+## 📁 Project Structure
+
+```bash
+portfolio-website/
+├── index.html             # Home page
+├── about.html             # About / Projects page
+├── skills.html            # Technical skills
+├── resume.html            # Resume section
+├── experience.html        # Work experience
+├── projects.html          # Additional projects
+├── contact.html           # Contact form
+├── styles.css             # Global CSS styling
+|
+└── README.md              # This file
+````
+
+---
+
+## ✨ Features
+
+* 🖥️ Fully responsive design using **HTML5 + CSS3**
+* 🌈 Smooth layout, modern fonts, and icons with **Font Awesome**
+* ⚙️ Clean navigation bar linking to all sections
+* 📸 Integrated project images and videos
+* 📊 Showcases **AI/ML** projects like:
+
+  * AI Sudoku Solver
+  * Plant Disease Detection
+* 📄 Downloadable resume and contact info
+* 🔒 Secure file usage and clean UX
+
+---
+
+## 🛠️ Technologies Used
+
+* **Frontend**: HTML, CSS, JavaScript
+* **UI Enhancements**: Font Awesome, Google Fonts (Poppins)
+* **Tools**: VSCode, Git, GitHub Pages
+
+---
+
+## 🔍 Key Projects Highlighted
+
+### 🧠 AI Sudoku Solver & Generator
+
+* Generates and solves 4x4, 9x9, and 16x16 puzzles using CSP and Neural Networks.
+* Built with Flask + SQLite + JS frontend.
+* Real-time validation and global leaderboard.
+
+### 🌿 Plant Disease Detection
+
+* Deep learning models trained on 50K+ leaf images.
+* Detects diseases across 14 crops using CNNs, ResNet18, MobileNetV2.
+* Flask-based web app for live prediction with prevention advice.
+
+### 🌐 This Portfolio
+
+* Personal branding site built from scratch.
+* Includes resume, skillset, contact form, and project demos.
+* Fully responsive and styled with modern UI components.
+
+---
+
+## 🧠 Design
+
+Design goals:
+
+* 💡 Simple but elegant
+* 💼 Professional yet personal
+* 🌐 Fast and accessible
+
+---
+
+## 🚀 How to Use
+
+### Option 1: View Online
+
+Just go to [your live URL](https://your-portfolio-link.com) to explore the portfolio.
+
+### Option 2: Run Locally
+
+```bash
+# Clone this repo
+git clone https://github.com/your-username/portfolio-website.git
+cd portfolio-website
+
+# Open index.html in your browser
+```
+
+You can host it using GitHub Pages, Netlify, or Vercel.
+
+---
+
+## 📬 Contact Me
+
+Feel free to reach out or connect:
+
+* 📧 Email: [nehatomar349@gmail.com](mailto:nehatomar349@gmail.com)
+* 💼 LinkedIn: [https://www.linkedin.com/in/neha-tomar-52b212224/](https://www.linkedin.com/in/neha-tomar-52b212224/)
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE). Feel free to reuse and customize it for your own portfolio!
+
+---
+
+> © 2025 Neha Tomar | Built with 💙 passion and clean code.
+
+```
+
+---
+```
