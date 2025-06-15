@@ -6,7 +6,7 @@ Welcome to my personal portfolio website! This project is a responsive, multi-pa
 ## 📌 Live Preview
 
 🌟 [View the Live Website](https://your-portfolio-link.com)  
-📹📹 [Watch the Video Demo](https://youtu.be/gh8WqYp7X5o)
+📹📹 [Watch the Video Demo]([https://youtu.be/gh8WqYp7X5o](https://youtu.be/gh8WqYp7X5o))
 
 
 ---
