@@ -5,7 +5,7 @@ Welcome to my personal portfolio website! This project is a responsive, multi-pa
 
 ## 📌 Live Preview
 
-🌟 [View the Live Website]([https://your-portfolio-link.com](https://684e8bada49b72d5b63d0825--inspiring-palmier-dd7dd4.netlify.app/))  
+🌟 [View the Live Website](https://684e8bada49b72d5b63d0825--inspiring-palmier-dd7dd4.netlify.app/)  
 [![Watch the video](https://img.youtube.com/vi/gh8WqYp7X5o/maxresdefault.jpg)](https://youtu.be/gh8WqYp7X5o)
 
 
