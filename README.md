@@ -144,11 +144,14 @@ Feel free to reach out or connect:
 
 This project is licensed under the [MIT License](LICENSE). Feel free to reuse and customize it for your own portfolio!
 
+## 📬 Connect with Me
+
+[![Portfolio](https://img.shields.io/badge/Portfolio-Visit-blue?style=for-the-badge)](https://inspiring-palmier-dd7dd4.netlify.app/)
+[![GitHub](https://img.shields.io/badge/GitHub-NehaaTomar-black?style=for-the-badge&logo=github)](https://github.com/NehaaTomar)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Follow-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/neha-tomar-52b212224)
+[![Gmail](https://img.shields.io/badge/Gmail-MailMe-red?style=for-the-badge&logo=gmail)](mailto:nehatomar349@gmail.com)
+
+
 ---
 
 > © 2025 Neha Tomar | Built with 💙 passion and clean code.
-
-```
-
----
-```
